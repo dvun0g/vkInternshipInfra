@@ -1,0 +1,17 @@
+.AppRoot {
+  height: 100%;
+}
+
+.AppRoot--pointer-has-not {
+  user-select: none;
+}
+
+@media (--pointer-has-not) {
+  .AppRoot--pointer-none {
+    user-select: none;
+  }
+}
+
+:global(.vkui__root--embedded) .AppRoot {
+  overflow: auto;
+}

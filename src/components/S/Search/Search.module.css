@@ -1,0 +1,136 @@
+.search {
+  display: flex;
+  overflow: hidden;
+  padding: 8px var(--vkui-size-base-padding-horizontal-regular);
+  -webkit-tap-highlight-color: transparent;
+
+  --vkui-internal-search-height: var(--vkui-size-search-height-regular);
+}
+
+.search-field {
+  flex: 2;
+  position: relative;
+  display: flex;
+  height: var(--vkui-internal-search-height);
+  background-color: var(--vkui-color-search-field-background);
+  border-radius: var(--vkui-size-border-radius-regular);
+
+  /**
+   * Костыль для PanelHeader. Необходимо для растягивания на всю ширину.
+  */
+  width: 10000px;
+}
+
+.search-field:hover {
+  background-color: var(--vkui-color-search-field-background-hover);
+}
+
+.search-field:active {
+  background-color: var(--vkui-color-search-field-background-active);
+}
+
+.search-control {
+  padding-left: 12px;
+  color: var(--vkui-color-icon-medium);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: calc(100% - 1px);
+  height: 100%;
+  border-radius: inherit;
+}
+
+.search-input {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 36px;
+  box-sizing: border-box;
+  border-radius: inherit;
+  max-width: 100%;
+  flex-grow: 1;
+  min-width: 0;
+  background-color: transparent;
+  color: var(--vkui-color-text-primary);
+}
+
+.search-input::-webkit-search-decoration,
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-results-button,
+.search-input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-has-after .search-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-has-value .search-input,
+.search-has-icon .search-input {
+  margin-right: calc(var(--vkui-internal-search-height) + 4px);
+}
+
+.search-has-icon.search-has-value .search-input {
+  margin-right: calc((var(--vkui-internal-search-height) + 4px) * 2);
+}
+
+.search-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vkui-color-icon-secondary);
+}
+
+.search-icon {
+  width: calc(var(--vkui-internal-search-height) + 4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border-radius: var(--vkui-size-border-radius-regular);
+}
+
+/* stylelint-disable-next-line @project-tools/stylelint-atomic,selector-pseudo-class-no-unknown */
+.search-icon :global(.vkui-icon) {
+  padding: 0;
+}
+
+.search-after {
+  flex: 0;
+  transform: translate(50%);
+  transform-origin: left;
+  min-width: initial;
+  max-width: min-content;
+  pointer-events: none;
+  transition: flex 0.3s var(--vkui-animation-easing-platform),
+    transform 0.3s var(--vkui-animation-easing-platform);
+  overflow: hidden;
+  margin-left: 4px;
+  margin-right: calc(4px - var(--vkui-size-base-padding-horizontal-regular));
+}
+
+.search-focused .search-after,
+.search-has-value .search-after {
+  flex: 1;
+  transform: translate(0);
+  pointer-events: initial;
+}
+
+.search-after-text {
+  display: block;
+  white-space: nowrap;
+  text-overflow: clip;
+  overflow: hidden;
+}
+
+.group-mode-plain .search {
+  padding-top: 4px;
+}
