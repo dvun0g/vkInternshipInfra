@@ -63,7 +63,8 @@
 		"build": "node scripts/build.js",
 		"test": "node scripts/test.js",
 		"stylelint": "npx stylelint \"**/*.css\"",
-		"stylelint:compress": "node scripts/stylelint/compressStylelintIgnore/compressStylelintIgnore.js"
+		"stylelint:compress": "node scripts/stylelint/compressStylelintIgnore/compressStylelintIgnore.js",
+		"stylelint:delete": "node scripts/stylelint/deleteStylelintIgnore/deleteStylelintIgnore.js"
 	},
 	"eslintConfig": {
 		"extends": [
