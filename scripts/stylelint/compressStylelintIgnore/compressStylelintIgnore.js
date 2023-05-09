@@ -31,10 +31,6 @@ const getStylelintConfigContent = async function (stylelintFilePath) {
 	}
 };
 
-module.exports = {
-	getStylelintConfigContent,
-};
-
 /**
  * Функция возвращает контент и все файлы из .stylelintignore
  * @param {String} stylelintIgnoreFilePath
